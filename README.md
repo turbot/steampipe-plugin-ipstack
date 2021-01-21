@@ -20,7 +20,7 @@
 
 Use SQL to query IP address information including geolocation and more from ipstack. For example:
 
-```
+```sql
 select ip, country_code, region_name, latitude, longitude, location_calling_code from ipstack_ip;
 ```
 
