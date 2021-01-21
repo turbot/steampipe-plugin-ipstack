@@ -1,0 +1,3 @@
+connection "ipstack" {
+  plugin    = "ipstack"                 
+} 
