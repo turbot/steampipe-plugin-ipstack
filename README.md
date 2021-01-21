@@ -8,7 +8,7 @@
     <img src="https://steampipe.io/images/steampipe_logo_wordmark_padding.svg" height="28">
   </a>
   <a aria-label="Plugin version" href="https://hub.steampipe.io/plugins/turbot/ipstack">
-    <img alt="" src="https://img.shields.io/static/v1?label=turbot/ipstack&message=v0.1.0&style=for-the-badge&labelColor=777777&color=F3F1F0">
+    <img alt="" src="https://img.shields.io/static/v1?label=turbot/ipstack&message=v0.1.1&style=for-the-badge&labelColor=777777&color=F3F1F0">
   </a>
   &nbsp;
   <a aria-label="License" href="LICENSE">
