@@ -1,4 +1,3 @@
-
 <p align="center">
     <h1 align="center">ipstack Plugin for Steampipe</h1>
 </p>
@@ -31,6 +30,7 @@ Learn about [Steampipe](https://steampipe.io/).
 **[Table documentation and examples &rarr;](https://hub.steampipe.io/plugins/turbot/ipstack)**
 
 Install the plugin:
+
 ```
 steampipe plugin install ipstack
 ```
@@ -45,4 +45,4 @@ Our [Code of Conduct](https://github.com/turbot/steampipe/blob/main/CODE_OF_COND
 
 ### Contributing
 
-Please see [CONTRIBUTING.md](https://github.com/turbot/steampipe/CONTRIBUTING.md).
+Please see [CONTRIBUTING.md](https://github.com/turbot/steampipe/blob/main/CONTRIBUTING.md).
