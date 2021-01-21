@@ -21,7 +21,7 @@ func tableIpstackIP() *plugin.Table {
 		},
 		Columns: []*plugin.Column{
 			// Top columns
-			{Name: "ip", Type: proto.ColumnType_STRING, Transform: transform.FromField("IP"), Description: "Requested IP address."},
+			{Name: "ip", Type: proto.ColumnType_IPADDR, Transform: transform.FromField("IP"), Description: "Requested IP address."},
 			{Name: "hostname", Type: proto.ColumnType_STRING},
 			{Name: "type", Type: proto.ColumnType_STRING, Description: "IP address type IPv4 or IPv6."},
 			{Name: "continent_code", Type: proto.ColumnType_STRING, Description: "2-letter continent code associated with the IP."},
@@ -88,7 +88,7 @@ func listIP(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (in
 
 func getIP(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (interface{}, error) {
 	quals := d.KeyColumnQuals
-	ip := quals["ip"].GetStringValue()
+	ip := quals["ip"].GetInetValue().GetAddr()
 	conn, err := connect(ctx)
 	if err != nil {
 		plugin.Logger(ctx).Error("ipstack_ip.getIP", "connection_error", err)
