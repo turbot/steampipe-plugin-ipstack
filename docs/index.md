@@ -1,8 +1,11 @@
 ---
-Title: ipstack
-Organization: Turbot HQ, Inc
-iconURL: https://turbot.com/images/turbot-icon-original.png
-
+organization: Turbot
+category: ["internet"]
+icon_url: "/images/plugins/turbot/ipstack.svg"
+brand_color: "#FF9900"
+display_name: "ipstack"
+name: "ipstack"
+description: "Steampipe plugin for querying location, currency, timezone and security information about an IP address from ipstack."
 ---
 
 # ipstack
@@ -54,4 +57,3 @@ set the environment variable:
 ```bash
 export IPSTACK_HTTPS="true"
 ```
-
