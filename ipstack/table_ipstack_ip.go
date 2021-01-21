@@ -22,7 +22,7 @@ func tableIpstackIP() *plugin.Table {
 		Columns: []*plugin.Column{
 			// Top columns
 			{Name: "ip", Type: proto.ColumnType_IPADDR, Transform: transform.FromField("IP"), Description: "Requested IP address."},
-			{Name: "hostname", Type: proto.ColumnType_STRING},
+			{Name: "hostname", Type: proto.ColumnType_STRING, Description: "Hostname associated with the IP address, if available."},
 			{Name: "type", Type: proto.ColumnType_STRING, Description: "IP address type IPv4 or IPv6."},
 			{Name: "continent_code", Type: proto.ColumnType_STRING, Description: "2-letter continent code associated with the IP."},
 			{Name: "continent_name", Type: proto.ColumnType_STRING, Description: "Name of the continent associated with the IP."},
@@ -45,7 +45,7 @@ func tableIpstackIP() *plugin.Table {
 			{Name: "location_is_eu", Type: proto.ColumnType_BOOL, Transform: transform.FromField("Location.IsEU"), Description: "True or false depending on whether or not the county associated with the IP is in the European Union."},
 
 			{Name: "timezone_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("Timezone.ID"), Description: "ID of the time zone associated with the IP (e.g. America/Los_Angeles for PST)."},
-			{Name: "timezone_current_time", Type: proto.ColumnType_DATETIME, Transform: transform.FromField("Timezone.CurrentTime"), Description: "Current date and time in the location associated with the IP (e.g. 2018-03-29T22:31:27-07:00)."},
+			{Name: "timezone_current_time", Type: proto.ColumnType_TIMESTAMP, Transform: transform.FromField("Timezone.CurrentTime"), Description: "Current date and time in the location associated with the IP (e.g. 2018-03-29T22:31:27-07:00)."},
 			{Name: "timezone_gmt_offset", Type: proto.ColumnType_INT, Transform: transform.FromField("Timezone.GMTOffset"), Description: "GMT offset of the given time zone in seconds (e.g. -25200 for PST's -7h GMT offset)."},
 			{Name: "timezone_code", Type: proto.ColumnType_STRING, Transform: transform.FromField("Timezone.Code"), Description: "Universal code of the given time zone."},
 			{Name: "timezone_is_daylight_saving", Type: proto.ColumnType_BOOL, Transform: transform.FromField("Timezone.IsDaylightSaving"), Description: "True or false depending on whether or not the given time zone is considered daylight saving time."},
