@@ -48,7 +48,7 @@ on the [ipstack website](https://ipstack.com) to get your free token. It looks l
   }
   ```
 
-- A connection config to connect ipstack using HTPPS request by setting https aregument as true.
+- A connection config to connect ipstack using HTPPS request by setting https argument as true.
 
   ```hcl
   connection "ipstack-enterprise" {
