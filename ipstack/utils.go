@@ -13,7 +13,7 @@ import (
 
 func connect(_ context.Context, d *plugin.QueryData) (*ipstack.Client, error) {
 	token := os.Getenv("IPSTACK_TOKEN")
-	httpsEnvVar := os.Getenv("IPSTACK_HTTPS")
+	https := os.Getenv("IPSTACK_HTTPS")
 
 	ipstackConfig := GetConfig(d.Connection)
 	if &ipstackConfig != nil {
@@ -21,8 +21,8 @@ func connect(_ context.Context, d *plugin.QueryData) (*ipstack.Client, error) {
 			token = *ipstackConfig.Token
 		}
 
-		if ipstackConfig.HttpsEnvVar != nil {
-			httpsEnvVar = *ipstackConfig.HttpsEnvVar
+		if ipstackConfig.Https != nil {
+			https = *ipstackConfig.Https
 		}
 
 	}
@@ -31,10 +31,9 @@ func connect(_ context.Context, d *plugin.QueryData) (*ipstack.Client, error) {
 		return nil, errors.New("IPSTACK_TOKEN environment variable must be set")
 	}
 
-	// httpsEnvVar, ok := os.LookupEnv("IPSTACK_HTTPS")
 	httpsEnabled := false
 
-	if strings.ToLower(httpsEnvVar) == "true" {
+	if strings.ToLower(https) == "true" {
 		httpsEnabled = true
 	}
 
