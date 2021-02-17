@@ -6,21 +6,38 @@ import (
 	"os"
 	"strings"
 
+	"github.com/turbot/steampipe-plugin-sdk/plugin"
+
 	"github.com/qioalice/ipstack"
 )
 
-func connect(_ context.Context) (*ipstack.Client, error) {
-	token, ok := os.LookupEnv("IPSTACK_TOKEN")
-	if !ok || token == "" {
+func connect(_ context.Context, d *plugin.QueryData) (*ipstack.Client, error) {
+	token := os.Getenv("IPSTACK_TOKEN")
+	httpsEnvVar := os.Getenv("IPSTACK_HTTPS")
+
+	ipstackConfig := GetConfig(d.Connection)
+	if &ipstackConfig != nil {
+		if ipstackConfig.Token != nil {
+			token = *ipstackConfig.Token
+		}
+
+		if ipstackConfig.HttpsEnvVar != nil {
+			httpsEnvVar = *ipstackConfig.HttpsEnvVar
+		}
+
+	}
+
+	if token == "" {
 		return nil, errors.New("IPSTACK_TOKEN environment variable must be set")
 	}
-	httpsEnvVar, ok := os.LookupEnv("IPSTACK_HTTPS")
+
+	// httpsEnvVar, ok := os.LookupEnv("IPSTACK_HTTPS")
 	httpsEnabled := false
-	if ok {
-		if strings.ToLower(httpsEnvVar) == "true" {
-			httpsEnabled = true
-		}
+
+	if strings.ToLower(httpsEnvVar) == "true" {
+		httpsEnabled = true
 	}
+
 	return ipstack.New(
 		ipstack.ParamToken(token),
 		// Only do the "me" call if we want our own IP

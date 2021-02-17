@@ -9,7 +9,11 @@ import (
 
 func Plugin(ctx context.Context) *plugin.Plugin {
 	p := &plugin.Plugin{
-		Name:             "steampipe-plugin-ipstack",
+		Name: "steampipe-plugin-ipstack",
+		ConnectionConfigSchema: &plugin.ConnectionConfigSchema{
+			NewInstance: ConfigInstance,
+			Schema:      ConfigSchema,
+		},
 		DefaultTransform: transform.FromGo().NullIfZero(),
 		TableMap: map[string]*plugin.Table{
 			"ipstack_ip": tableIpstackIP(),
