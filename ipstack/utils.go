@@ -28,7 +28,7 @@ func connect(_ context.Context, d *plugin.QueryData) (*ipstack.Client, error) {
 	}
 
 	if token == "" {
-		return nil, errors.New("IPSTACK_TOKEN environment variable must be set")
+		return nil, errors.New("'token' argument must be set in the connection configuration")
 	}
 
 	httpsEnabled := false
