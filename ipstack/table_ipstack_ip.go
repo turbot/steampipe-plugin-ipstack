@@ -72,7 +72,7 @@ func tableIpstackIP() *plugin.Table {
 }
 
 func listIP(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
-	conn, err := connect(ctx)
+	conn, err := connect(ctx, d)
 	if err != nil {
 		plugin.Logger(ctx).Error("ipstack_ip.listIP", "connection_error", err)
 		return nil, err
@@ -89,7 +89,7 @@ func listIP(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (in
 func getIP(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (interface{}, error) {
 	quals := d.KeyColumnQuals
 	ip := quals["ip"].GetInetValue().GetAddr()
-	conn, err := connect(ctx)
+	conn, err := connect(ctx, d)
 	if err != nil {
 		plugin.Logger(ctx).Error("ipstack_ip.getIP", "connection_error", err)
 		return nil, err

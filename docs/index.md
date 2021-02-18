@@ -14,7 +14,7 @@ ipstack provides IP to geolocation APIs and global IP database services.
 
 ## Installation
 
-Download and install the latest ipstack plugin:
+To download and install the latest ipstack plugin:
 
 ```bash
 $ steampipe plugin install ipstack
@@ -22,38 +22,29 @@ Installing plugin ipstack...
 $
 ```
 
-## Configure API Token
+## Credentials
 
-ipstack requires an API token for all requests, but offers a free tier. Sign up
-on the [ipstack website](https://ipstack.com) to get your free token.
+ipstack requires an API token for all requests, but offers a free tier. Sign up on the [ipstack website](https://ipstack.com) to get your free token. It looks like `e0067f483763d6132d549234f8a6de22`.
 
-Set ipstack API credentials as environment variables (Mac, Linux):
 
-```bash
-export IPSTACK_TOKEN="e0067f483763d6132d549234f8a6de22"
+## Connection Configuration
+
+Connection configurations are defined using HCL in one or more Steampipe config files. Steampipe will load ALL configuration files from `~/.steampipe/config` that have a `.spc` extension. A config file may contain multiple connections.
+
+Installing the latest ipstack plugin will create a default connection named `ipstack` in the `~/.steampipe/config/ipstack.spc` file.  You must edit this connection to include your API token:
+
+```hcl
+connection "ipstack" {
+  plugin  = "ipstack"
+  token   = "e0067f483763d6132d934864f8a6de22"
+}
 ```
 
-Run a query:
-
-```bash
-$ steampipe query
-Welcome to Steampipe v0.0.12
-Type ".inspect" for more information.
-> select ip, country_code, region_name, latitude, longitude, location_calling_code from ipstack_ip;
-+----------------+--------------+-------------+-------------------+--------------------+-----------------------+
-|       ip       | country_code | region_name |     latitude      |     longitude      | location_calling_code |
-+----------------+--------------+-------------+-------------------+--------------------+-----------------------+
-| 173.54.210.135 | US           | New Jersey  | 40.72555923461914 | -74.25717163085938 |                     1 |
-+----------------+--------------+-------------+-------------------+--------------------+-----------------------+
->
-```
-
-## Using HTTPS (requires ipstack subscription)
-
-ipstack restricts HTTPS requests to subscribers. This plugin uses HTTP by
-default for convenience in the free tier. If you wish to use HTTPS please
-set the environment variable:
-
-```bash
-export IPSTACK_HTTPS="true"
+ipstack restricts HTTPS requests to subscribers. This plugin uses HTTP by default for convenience in the free tier. If you wish to use HTTPS please set the `https` argument:
+```hcl
+connection "ipstack" {
+  plugin  = "ipstack"
+  token   = "e0067f483763d6132d934864f8a6de22"
+  https   = "true"
+}
 ```
