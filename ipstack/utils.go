@@ -28,7 +28,7 @@ func connect(_ context.Context, d *plugin.QueryData) (*ipstack.Client, error) {
 	}
 
 	if token == "" {
-		return nil, errors.New("'token' argument must be set in the connection configuration")
+		return nil, errors.New("'token' must be set in the connection configuration. Edit your connection configuration file and then restart Steampipe")
 	}
 
 	httpsEnabled := false
