@@ -16,7 +16,8 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 		},
 		DefaultTransform: transform.FromGo().NullIfZero(),
 		TableMap: map[string]*plugin.Table{
-			"ipstack_ip": tableIpstackIP(),
+			"ipstack_ip":    tableIpstackIP(),
+			"ipstack_my_ip": tableIpstackMyIP(),
 		},
 	}
 	return p
