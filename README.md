@@ -1,44 +1,72 @@
-<p align="center">
-    <h1 align="center">ipstack Plugin for Steampipe</h1>
-</p>
+![image](https://hub.steampipe.io/images/plugins/turbot/ipstack-social-graphic.png)
 
-<p align="center">
-  <a aria-label="Steampipe logo" href="https://steampipe.io">
-    <img src="https://steampipe.io/images/steampipe_logo_wordmark_padding.svg" height="28">
-  </a>
-  <a aria-label="License" href="LICENSE">
-    <img alt="" src="https://img.shields.io/static/v1?label=license&message=Apache-2.0&style=for-the-badge&labelColor=777777&color=F3F1F0">
-  </a>
-</p>
+# ipstack Plugin for Steampipe
 
-## Query ipstack with SQL
+Use SQL to query IP address information including geolocation and more from ipstack.
 
-Use SQL to query IP address information including geolocation and more from ipstack. For example:
+- **[Get started →](https://hub.steampipe.io/plugins/turbot/ipstack)**
+- Documentation: [Table definitions & examples](https://hub.steampipe.io/plugins/turbot/ipstack/tables)
+- Community: [Slack Channel](https://join.slack.com/t/steampipe/shared_invite/zt-oij778tv-lYyRTWOTMQYBVAbtPSWs3g)
+- Get involved: [Issues](https://github.com/turbot/steampipe-plugin-ipstack/issues)
+
+## Quick start
+
+Install the plugin with [Steampipe](https://steampipe.io):
+
+```shell
+steampipe plugin install ipstack
+```
+
+Run a query:
 
 ```sql
 select ip, country_code, region_name, latitude, longitude, location_calling_code from ipstack_ip;
 ```
 
-Learn about [Steampipe](https://steampipe.io/).
+## Developing
 
-## Get started
+Prerequisites:
 
-**[Table documentation and examples &rarr;](https://hub.steampipe.io/plugins/turbot/ipstack)**
+- [Steampipe](https://steampipe.io/downloads)
+- [Golang](https://golang.org/doc/install)
 
-Install the plugin:
+Clone:
+
+```sh
+git clone https://github.com/turbot/steampipe-plugin-ipstack.git
+cd steampipe-plugin-ipstack
+```
+
+Build, which automatically installs the new version to your `~/.steampipe/plugins` directory:
 
 ```
-steampipe plugin install ipstack
+make
 ```
 
-## Get involved
+Configure the plugin:
 
-### Community
+```
+cp config/* ~/.steampipe/config
+vi ~/.steampipe/config/ipstack.spc
+```
 
-The Steampipe community can be found on [GitHub Discussions](https://github.com/turbot/steampipe/discussions), where you can ask questions, voice ideas, and share your projects.
+Try it!
 
-Our [Code of Conduct](https://github.com/turbot/steampipe/blob/main/CODE_OF_CONDUCT.md) applies to all Steampipe community channels.
+```
+steampipe query
+> .inspect ipstack
+```
 
-### Contributing
+Further reading:
 
-Please see [CONTRIBUTING.md](https://github.com/turbot/steampipe/blob/main/CONTRIBUTING.md).
+- [Writing plugins](https://steampipe.io/docs/develop/writing-plugins)
+- [Writing your first table](https://steampipe.io/docs/develop/writing-your-first-table)
+
+## Contributing
+
+Please see the [contribution guidelines](https://github.com/turbot/steampipe/blob/main/CONTRIBUTING.md) and our [code of conduct](https://github.com/turbot/steampipe/blob/main/CODE_OF_CONDUCT.md). All contributions are subject to the [Apache 2.0 open source license](https://github.com/turbot/steampipe-plugin-ipstack/blob/main/LICENSE).
+
+`help wanted` issues:
+
+- [Steampipe](https://github.com/turbot/steampipe/labels/help%20wanted)
+- [ipstack Plugin](https://github.com/turbot/steampipe-plugin-ipstack/labels/help%20wanted)
