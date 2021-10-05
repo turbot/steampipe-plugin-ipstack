@@ -1,3 +1,10 @@
+## v0.3.1 [2021-10-05]
+
+_Enhancements_
+
+- Updated the README file to include GitHub clone link and license information ([#15](https://github.com/turbot/steampipe-plugin-ipstack/pull/15))
+- Updated plugin license to Apache 2.0 per [turbot/steampipe#488](https://github.com/turbot/steampipe/issues/488)([#12](https://github.com/turbot/steampipe-plugin-ipstack/pull/12))
+
 ## v0.3.0 [2021-03-18]
 
 _What's new?_
