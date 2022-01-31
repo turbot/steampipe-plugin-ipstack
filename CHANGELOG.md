@@ -1,5 +1,5 @@
 
-## v0.5.0 [2022-01-30]
+## v0.5.0 [2022-01-31]
 
 _Warning_
 - `https` option is now bool, not a string.
@@ -7,6 +7,8 @@ _Warning_
 
 _Enhancements_
 - Add `security` config (default false), since security data now requires a subscription.
+- Recompiled plugin with [steampipe-plugin-sdk v1.8.3](https://github.com/turbot/steampipe-plugin-sdk/blob/main/CHANGELOG.md#v183--2021-12-23) ([#22](https://github.com/turbot/steampipe-plugin-ipstack/pull/22))
+- `docs/index.md` and `README.md` files have now been updated to the latest format
 
 ## v0.4.0 [2021-12-16]
 
