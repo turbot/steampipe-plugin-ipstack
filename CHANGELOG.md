@@ -1,5 +1,5 @@
 
-## v0.5.0 [2022-01-30]
+## v0.5.0 [2022-01-31]
 
 _Warning_
 - `https` option is now bool, not a string.
