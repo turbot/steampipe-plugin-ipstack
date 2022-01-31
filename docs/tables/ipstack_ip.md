@@ -3,6 +3,9 @@
 
 Query location, currency, timezone and security information about any IP address.
 
+Notes:
+* Security data is only available to subscribers. Set the security config option to true to use it.
+
 ## Examples
 
 ### Query details for any IPv4 address
@@ -21,9 +24,9 @@ select * from ipstack_ip where ip = '2001:4860:4860::8888';
 ### Lookup IP details for elastic IPs
 
 ```sql
-select 
-  allocation_id, 
-  public_ip, 
+select
+  allocation_id,
+  public_ip,
   i.city,
   i.zip,
   i.region_name,
@@ -33,7 +36,7 @@ select
   i.longitude
 from
   aws_vpc_eip as eip,
-  ipstack_ip as i 
-where 
+  ipstack_ip as i
+where
   eip.public_ip = i.ip;
 ```

@@ -6,8 +6,9 @@ import (
 )
 
 type ipstackConfig struct {
-	Token *string `cty:"token"`
-	Https *string `cty:"https"`
+	Token    *string `cty:"token"`
+	Https    *bool   `cty:"https"`
+	Security *bool   `cty:"security"`
 }
 
 var ConfigSchema = map[string]*schema.Attribute{
@@ -15,7 +16,10 @@ var ConfigSchema = map[string]*schema.Attribute{
 		Type: schema.TypeString,
 	},
 	"https": {
-		Type: schema.TypeString,
+		Type: schema.TypeBool,
+	},
+	"security": {
+		Type: schema.TypeBool,
 	},
 }
 

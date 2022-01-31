@@ -49,14 +49,15 @@ func ipstackIpColumns() []*plugin.Column {
 		{Name: "asn", Type: proto.ColumnType_INT, Transform: transform.FromField("Connection.ASN"), Description: "Autonomous System Number associated with the IP."},
 		{Name: "isp", Type: proto.ColumnType_STRING, Transform: transform.FromField("Connection.ISP"), Description: "Name of the ISP associated with the IP."},
 
-		{Name: "is_proxy", Type: proto.ColumnType_BOOL, Transform: transform.FromField("Security.IsProxy"), Description: "True or false depending on whether or not the given IP is associated with a proxy."},
-		{Name: "proxy_type", Type: proto.ColumnType_STRING, Transform: transform.FromField("Security.ProxyType"), Description: "Type of proxy the IP is associated with."},
-		{Name: "is_crawler", Type: proto.ColumnType_BOOL, Transform: transform.FromField("Security.IsCrawler"), Description: "True or false depending on whether or not the given IP is associated with a crawler."},
-		{Name: "crawler_name", Type: proto.ColumnType_STRING, Transform: transform.FromField("Security.CrawlerName"), Description: "Name of the crawler the IP is associated with."},
-		{Name: "crawler_type", Type: proto.ColumnType_STRING, Transform: transform.FromField("Security.CrawlerType"), Description: "Type of crawler the IP is associated with."},
-		{Name: "is_tor", Type: proto.ColumnType_BOOL, Transform: transform.FromField("Security.IsTOR"), Description: "True or false depending on whether or not the given IP is associated with the anonymous Tor system."},
-		{Name: "threat_level", Type: proto.ColumnType_STRING, Transform: transform.FromField("Security.ThreatLevel"), Description: "Type of threat level the IP is associated with."},
-		{Name: "threat_types", Type: proto.ColumnType_JSON, Transform: transform.FromField("Security.ThreatTypes"), Description: "Object containing all threat types associated with the IP."},
+		// Security columns only work if the security config flag is true
+		{Name: "is_proxy", Type: proto.ColumnType_BOOL, Transform: transform.FromField("Security.IsProxy"), Description: "True or false depending on whether or not the given IP is associated with a proxy. Requires security to be enabled."},
+		{Name: "proxy_type", Type: proto.ColumnType_STRING, Transform: transform.FromField("Security.ProxyType"), Description: "Type of proxy the IP is associated with. Requires security to be enabled."},
+		{Name: "is_crawler", Type: proto.ColumnType_BOOL, Transform: transform.FromField("Security.IsCrawler"), Description: "True or false depending on whether or not the given IP is associated with a crawler. Requires security to be enabled."},
+		{Name: "crawler_name", Type: proto.ColumnType_STRING, Transform: transform.FromField("Security.CrawlerName"), Description: "Name of the crawler the IP is associated with. Requires security to be enabled."},
+		{Name: "crawler_type", Type: proto.ColumnType_STRING, Transform: transform.FromField("Security.CrawlerType"), Description: "Type of crawler the IP is associated with. Requires security to be enabled."},
+		{Name: "is_tor", Type: proto.ColumnType_BOOL, Transform: transform.FromField("Security.IsTOR"), Description: "True or false depending on whether or not the given IP is associated with the anonymous Tor system. Requires security to be enabled."},
+		{Name: "threat_level", Type: proto.ColumnType_STRING, Transform: transform.FromField("Security.ThreatLevel"), Description: "Type of threat level the IP is associated with. Requires security to be enabled."},
+		{Name: "threat_types", Type: proto.ColumnType_JSON, Transform: transform.FromField("Security.ThreatTypes"), Description: "Object containing all threat types associated with the IP. Requires security to be enabled."},
 	}
 }
 

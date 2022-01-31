@@ -35,16 +35,17 @@ Installing the latest ipstack plugin will create a default connection named `ips
 
 ```hcl
 connection "ipstack" {
-  plugin  = "ipstack"
-  token   = "e0067f483763d6132d934864f8a6de22"
+  plugin = "ipstack"
+  token  = "e0067f483763d6132d934864f8a6de22"
 }
 ```
 
-ipstack restricts HTTPS requests to subscribers. This plugin uses HTTP by default for convenience in the free tier. If you wish to use HTTPS please set the `https` argument:
+ipstack restricts HTTPS access and security data to subscribers. To enable:
 ```hcl
 connection "ipstack" {
-  plugin  = "ipstack"
-  token   = "e0067f483763d6132d934864f8a6de22"
-  https   = "true"
+  plugin   = "ipstack"
+  token    = "e0067f483763d6132d934864f8a6de22"
+  https    = true
+  security = true
 }
 ```

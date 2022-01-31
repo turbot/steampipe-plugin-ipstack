@@ -1,3 +1,13 @@
+
+## v0.5.0 [2022-01-30]
+
+_Warning_
+- `https` option is now bool, not a string.
+- Removed `IPSTACK_HTTPS` env var.
+
+_Enhancements_
+- Add `security` config (default false), since security data now requires a subscription.
+
 ## v0.4.0 [2021-12-16]
 
 _Enhancements_
