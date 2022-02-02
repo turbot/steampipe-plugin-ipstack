@@ -6,6 +6,8 @@ brand_color: "#FF9900"
 display_name: "ipstack"
 name: "ipstack"
 description: "Steampipe plugin for querying location, currency, timezone and security information about an IP address from ipstack."
+og_description: "Query ipstack with SQL! Open source CLI. No DB required."
+og_image: "/images/plugins/turbot/ipstack-social-graphic.png" 
 ---
 
 # ipstack + Steampipe
