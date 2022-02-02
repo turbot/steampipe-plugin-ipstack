@@ -20,7 +20,24 @@ steampipe plugin install ipstack
 Run a query:
 
 ```sql
-select ip, country_code, region_name, latitude, longitude, location_calling_code from ipstack_ip where ip = '99.84.45.75';
+select
+  ip,
+  country_code,
+  region_name,
+  latitude
+from
+  ipstack_ip
+where
+  ip = '99.84.45.75';
+```
+
+```
+> select ip, country_code, region_name, latitude from ipstack_ip where ip = '99.84.45.75' ;
++-------------+--------------+-------------+--------------------+
+| ip          | country_code | region_name | latitude           |
++-------------+--------------+-------------+--------------------+
+| 99.84.45.75 | US           | New Jersey  | 40.738731384277344 |
++-------------+--------------+-------------+--------------------+
 ```
 
 ## Developing
