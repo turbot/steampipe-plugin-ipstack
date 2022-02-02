@@ -1,3 +1,8 @@
+## v0.5.1 [2022-02-02]
+
+_Bug fixes_
+
+- Add the missing social image definition in the docs/index.md file ([#25](https://github.com/turbot/steampipe-plugin-ipstack/pull/25))
 
 ## v0.5.0 [2022-01-31]
 
