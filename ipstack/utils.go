@@ -16,16 +16,14 @@ func connect(_ context.Context, d *plugin.QueryData) (*ipstack.Client, error) {
 	security := false
 
 	ipstackConfig := GetConfig(d.Connection)
-	if &ipstackConfig != nil {
-		if ipstackConfig.Token != nil {
-			token = *ipstackConfig.Token
-		}
-		if ipstackConfig.Https != nil {
-			https = *ipstackConfig.Https
-		}
-		if ipstackConfig.Security != nil {
-			security = *ipstackConfig.Security
-		}
+	if ipstackConfig.Token != nil {
+		token = *ipstackConfig.Token
+	}
+	if ipstackConfig.Https != nil {
+		https = *ipstackConfig.Https
+	}
+	if ipstackConfig.Security != nil {
+		security = *ipstackConfig.Security
 	}
 
 	if token == "" {
