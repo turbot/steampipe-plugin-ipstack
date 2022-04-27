@@ -3,7 +3,7 @@ package ipstack
 import (
 	"context"
 
-	"github.com/turbot/steampipe-plugin-sdk/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
 )
 
 func tableIpstackMyIP() *plugin.Table {
