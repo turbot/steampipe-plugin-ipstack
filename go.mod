@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/qioalice/ipstack v1.0.1
-	github.com/turbot/steampipe-plugin-sdk/v4 v4.1.6
+	github.com/turbot/steampipe-plugin-sdk/v4 v4.1.7
 )
 
 require (
