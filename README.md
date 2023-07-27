@@ -6,7 +6,7 @@ Use SQL to query IP address information including geolocation and more from ipst
 
 - **[Get started →](https://hub.steampipe.io/plugins/turbot/ipstack)**
 - Documentation: [Table definitions & examples](https://hub.steampipe.io/plugins/turbot/ipstack/tables)
-- Community: [Slack Channel](https://steampipe.io/community/join)
+- Community: [Join #steampipe on Slack →](https://turbot.com/community/join)
 - Get involved: [Issues](https://github.com/turbot/steampipe-plugin-ipstack/issues)
 
 ## Quick start
