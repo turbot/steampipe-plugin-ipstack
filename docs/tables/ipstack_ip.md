@@ -1,16 +1,18 @@
 ---
-title: "Steampipe Table: ipstack_ip - Query OCI IP Geolocation using SQL"
+title: "Steampipe Table: ipstack_ip - Query IP Geolocation using SQL"
 description: "Allows users to query IP Geolocation, specifically providing detailed information about any IP address such as location, connection, and security details."
 ---
 
-# Table: ipstack_ip - Query OCI IP Geolocation using SQL
+# Table: ipstack_ip - Query IP Geolocation using SQL
 
-IP Geolocation is a service within Oracle Cloud Infrastructure (OCI) that allows you to get detailed information about any IP address. It provides location details such as country, region, city, zip code, latitude, and longitude. Additionally, it offers connection information like ISP and ASN, as well as security data including whether the IP is a proxy, crawler, or threat.
+IP Geolocation is a service within that allows you to get detailed information about any IP address. It provides location details such as country, region, city, zip code, latitude, and longitude. Additionally, it offers connection information like ISP and ASN, as well as security data including whether the IP is a proxy, crawler, or threat.
 
 ## Table Usage Guide
 
-The `ipstack_ip` table provides insights into IP addresses using OCI IP Geolocation. As a network administrator or cybersecurity professional, you can explore detailed information about any IP address, including its location, connection, and security details. Use this table to gain insights into network traffic patterns, identify potential security threats, or troubleshoot network issues.
+The `ipstack_ip` table provides insights into IP addresses using IP Geolocation. As a network administrator or cybersecurity professional, you can explore detailed information about any IP address, including its location, connection, and security details. Use this table to gain insights into network traffic patterns, identify potential security threats, or troubleshoot network issues.
 
+**Important Notes**
+- Security data is only available to subscribers. Set the security config option to true to use it.
 
 ## Examples
 
