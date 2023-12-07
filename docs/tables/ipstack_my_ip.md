@@ -16,6 +16,10 @@ The `ipstack_my_ip` table provides insights into the geolocation details of your
 ### Get information about your current IP
 Explore your current IP address details to understand its geographical location, ISP, and other related information. This can be useful for troubleshooting network issues or for security monitoring purposes.
 
-```sql
+```sql+postgres
+select * from ipstack_my_ip;
+```
+
+```sql+sqlite
 select * from ipstack_my_ip;
 ```
