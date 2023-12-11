@@ -80,7 +80,4 @@ connection "ipstack" {
 }
 ```
 
-## Get involved
 
-- Open source: https://github.com/turbot/steampipe-plugin-ipstack
-- Community: [Join #steampipe on Slack →](https://turbot.com/community/join)
