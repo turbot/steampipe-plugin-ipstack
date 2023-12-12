@@ -2,25 +2,12 @@ package ipstack
 
 import (
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/schema"
 )
 
 type ipstackConfig struct {
-	Token    *string `cty:"token"`
-	Https    *bool   `cty:"https"`
-	Security *bool   `cty:"security"`
-}
-
-var ConfigSchema = map[string]*schema.Attribute{
-	"token": {
-		Type: schema.TypeString,
-	},
-	"https": {
-		Type: schema.TypeBool,
-	},
-	"security": {
-		Type: schema.TypeBool,
-	},
+	Token    *string `hcl:"token"`
+	Https    *bool   `hcl:"https"`
+	Security *bool   `hcl:"security"`
 }
 
 func ConfigInstance() interface{} {
