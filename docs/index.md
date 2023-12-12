@@ -7,14 +7,15 @@ display_name: "ipstack"
 name: "ipstack"
 description: "Steampipe plugin for querying location, currency, timezone and security information about an IP address from ipstack."
 og_description: "Query ipstack with SQL! Open source CLI. No DB required."
-og_image: "/images/plugins/turbot/ipstack-social-graphic.png" 
+og_image: "/images/plugins/turbot/ipstack-social-graphic.png"
+engines: ["steampipe", "sqlite", "postgres", "export"] 
 ---
 
 # ipstack + Steampipe
 
 [ipstack](https://ipstack.com/) provides IP to geolocation APIs and global IP database services.
 
-[Steampipe](https://steampipe.io) is an open source CLI to instantly query cloud APIs using SQL.
+[Steampipe](https://steampipe.io) is an open-source zero-ETL engine to instantly query cloud APIs using SQL.
 
 For example:
 
@@ -79,7 +80,4 @@ connection "ipstack" {
 }
 ```
 
-## Get involved
 
-- Open source: https://github.com/turbot/steampipe-plugin-ipstack
-- Community: [Join #steampipe on Slack →](https://turbot.com/community/join)
