@@ -80,4 +80,5 @@ connection "ipstack" {
 }
 ```
 
-
+Environment variables are also available as an alternate configuration method:
+* `IPSTACK_TOKEN`
