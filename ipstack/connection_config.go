@@ -1,7 +1,7 @@
 package ipstack
 
 import (
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v6/plugin"
 )
 
 type ipstackConfig struct {
@@ -16,9 +16,9 @@ func ConfigInstance() interface{} {
 
 // GetConfig :: retrieve and cast connection config from query data
 func GetConfig(connection *plugin.Connection) ipstackConfig {
-	if connection == nil || connection.Config == nil {
+	if connection == nil || connection.GetConfig() == nil {
 		return ipstackConfig{}
 	}
-	config, _ := connection.Config.(ipstackConfig)
+	config, _ := connection.GetConfig().(ipstackConfig)
 	return config
 }

@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/turbot/steampipe-plugin-ipstack/ipstack"
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v6/plugin"
 )
 
 func main() {
